@@ -17,32 +17,32 @@ player_tasks = {}
 
 ytdlp_format_options = {
     'format': 'bestaudio/best',
-    'noplaylist': False,      # Allow playlists
+    'noplaylist': False,
     'default_search': 'auto',
     'quiet': True,
     'geo_bypass': True,
     'age_limit': 0,
-    'extract_flat': True,     # Extract playlist entries without processing them
+    'extract_flat': True,
 }
 
 ytdlp_playlist_options = {
     'format': 'bestaudio/best',
-    'noplaylist': False,      # Allow playlists
+    'noplaylist': False,
     'default_search': 'auto',
     'quiet': True,
     'geo_bypass': True,
     'age_limit': 0,
-    'extract_flat': True,     # Extract playlist entries without processing them
+    'extract_flat': True,
 }
 
 ytdlp_video_options = {
     'format': 'bestaudio/best',
-    'noplaylist': True,       # Process single video
+    'noplaylist': True,
     'default_search': 'auto',
     'quiet': True,
     'geo_bypass': True,
     'age_limit': 0,
-    'extract_flat': False,    # Extract full data for individual videos
+    'extract_flat': False,
 }
 
 ffmpeg_options = {
@@ -72,7 +72,7 @@ class YTDLSource(discord.PCMVolumeTransformer):
                 raise Exception("Could not retrieve data from URL (may be age-restricted or unavailable).")
         except Exception as e:
             print(f"Error extracting info: {e}")
-            return None  # Return None if extraction fails
+            return None
 
         if 'entries' in data:
             data = data['entries'][0]
