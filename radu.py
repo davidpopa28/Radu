@@ -1,6 +1,6 @@
 import asyncio
 import concurrent
-
+import os
 import discord
 from discord.ext import commands
 import yt_dlp as youtube_dl
@@ -293,4 +293,4 @@ async def on_command_error(ctx, error):
         await ctx.send("An unexpected error occurred.")
         print(f'Error: {error}')
 
-bot.run('MTMxMDE1MzM1MjkxNDUzNDQ1MA.GEqjND.L-FceOI4rWJ7Ps3hAzghYjzjY9CsN-Dxx-vSyY')
+bot.run(os.getenv('DISCORD_BOT_TOKEN'))
